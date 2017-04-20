@@ -1,0 +1,14 @@
+{
+  "name": "wp-checker",
+  "version": "0.0.1",
+  "description": "Check if a website is running WordPress",
+  "main": "checkwp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "superagent": "^3.5.2"
+  }
+}
