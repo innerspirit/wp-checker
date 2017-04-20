@@ -6,6 +6,10 @@ function checkUrl(val) {
 	request
 		.get(val + addwp)
 		.end(function(err, res) {
+			if (err.status === undefined) {
+				console.log('Wrong URL');
+				return;
+			};
       if (res.notFound === false) {
 				console.log('Has WordPress');
 			} else {
