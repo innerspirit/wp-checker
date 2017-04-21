@@ -6,11 +6,11 @@ function checkUrl(val) {
 	request
 		.get(val + addwp)
 		.end(function(err, res) {
-			if (err.status === undefined) {
+			if (err !== null && err.status === undefined) {
 				console.log('Wrong URL');
 				return;
 			};
-      if (res.notFound === false) {
+      		if (res.notFound === false) {
 				console.log('Has WordPress');
 			} else {
 				console.log('The site does not have wp-admin');
