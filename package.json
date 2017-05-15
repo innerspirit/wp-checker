@@ -1,6 +1,6 @@
 {
   "name": "wp-checker",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "postversion": "git push && git push --tags && npm publish",
   "description": "Check if a website is running WordPress",
   "main": "checkwp.js",
@@ -17,5 +17,7 @@
     "superagent": "^3.5.2",
     "superagent-promise": "^1.1.0"
   },
-  "bin": { "wp-checker": "./run.js" }
+  "bin": {
+    "wp-checker": "./run.js"
+  }
 }
