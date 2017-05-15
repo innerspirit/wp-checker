@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var checker = require('./checkwp.js');
 let domains = process.argv.slice(2);
 
