@@ -1,32 +1,43 @@
 const request = require('superagent');
-//let URL = process.argv[2];
-let URL = process.argv.filter(filterDomains);
+var Promise = this.Promise || require('promise');
+var agent = require('superagent-promise')(request, Promise);
+let adminPath = "/wp-admin";
 
-function checkUrl(val) {
-	let addwp = "/wp-admin";
-	request
-		.get(val + addwp)
-		.end(function(err, res) {
-			if (err !== null && err.status === undefined) {
-				console.log('Wrong URL');
-				return;
+module.exports = checkUrl;
+
+function checkUrl(domain) {
+	return new Promise(function (resolve, reject) {
+		if (!validDomain(domain)) {
+			resolve(false);
+		}
+
+		var responded = function(res) {
+			if (res !== null && res.status === undefined) {
+				resolve(false);
 			};
-      		if (res.notFound === false) {
-				console.log('Has WordPress');
-			} else {
-				console.log('The site does not have wp-admin');
-			}
-		});
+			resolve(!res.notFound);
+		};
+
+		var failed = function (err) {
+			resolve(false);
+		};
+
+		return (agent
+			.get(domain + adminPath)
+			.end()
+			.then(responded)
+			.catch(failed)
+		);
+
+	});
 };
 
-function filterDomains(post) {
+function validDomain(domain) {
 	let array = ["twitter.com", "github.com", "i.redd.it", "i.imgur.com", "imgur.com", "gfycat.com"];
 	for (let i = 0; i < array.length ;i++) {
-		if (post === array[i]) {
+		if (domain === array[i]) {
 			return false;
 		}
 	}
 	return true;
 }
-
-checkUrl(URL[2]);

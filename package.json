@@ -7,9 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Christian M. Mackeprang <chris@chrismm.com> (https://chrismm.com/)",
-  "contributors": ["Cesar Mackeprang <cesaroach@gmail.com>"],
+  "contributors": [
+    "Cesar Mackeprang <cesaroach@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
-    "superagent": "^3.5.2"
+    "promise": "^7.1.1",
+    "superagent": "^3.5.2",
+    "superagent-promise": "^1.1.0"
   }
 }
