@@ -1,5 +1,6 @@
 const request = require('superagent');
-let URL = process.argv[2];
+//let URL = process.argv[2];
+let URL = process.argv.filter(filterDomains);
 
 function checkUrl(val) {
 	let addwp = "/wp-admin";
@@ -17,4 +18,15 @@ function checkUrl(val) {
 			}
 		});
 };
-checkUrl(URL);
+
+function filterDomains(post) {
+	let array = ["twitter.com", "github.com", "i.redd.it", "i.imgur.com", "imgur.com", "gfycat.com"];
+	for (let i = 0; i < array.length ;i++) {
+		if (post === array[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+checkUrl(URL[2]);
