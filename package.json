@@ -1,6 +1,6 @@
 {
   "name": "wp-checker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Check if a website is running WordPress",
   "main": "checkwp.js",
   "scripts": {
