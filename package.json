@@ -1,6 +1,7 @@
 {
   "name": "wp-checker",
   "version": "0.0.1",
+  "postversion": "git push && git push --tags && npm publish",
   "description": "Check if a website is running WordPress",
   "main": "checkwp.js",
   "scripts": {
