@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-var checker = require('./checkwp.js');
+let checker = require('./checkwp.js');
 let domains = process.argv.slice(2);
 
-for (var i in domains) {
+for (let i in domains) {
 	checker(domains[i]).then(logger.bind(domains[i]));
 }
 

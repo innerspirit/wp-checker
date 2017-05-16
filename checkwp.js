@@ -1,6 +1,6 @@
 const request = require('superagent');
-var Promise = this.Promise || require('promise');
-var agent = require('superagent-promise')(request, Promise);
+let Promise = this.Promise || require('promise');
+let agent = require('superagent-promise')(request, Promise);
 let adminPath = "/wp-admin";
 
 module.exports = checkUrl;
@@ -11,14 +11,14 @@ function checkUrl(domain) {
 			resolve(false);
 		}
 
-		var responded = function(res) {
+		let responded = function(res) {
 			if (res !== null && res.status === undefined) {
 				resolve(false);
 			};
 			resolve(!res.notFound);
 		};
 
-		var failed = function (err) {
+		let failed = function (err) {
 			resolve(false);
 		};
 
