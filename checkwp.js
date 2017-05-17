@@ -33,7 +33,7 @@ function checkUrl(domain) {
 };
 
 function validDomain(domain) {
-	let array = ["twitter.com", "github.com", "i.redd.it", "i.imgur.com", "imgur.com", "gfycat.com"];
+	let array = ["twitter.com", "github.com", "i.redd.it", "i.imgur.com", "imgur.com", "gfycat.com", "youtu.be", "gamasutra.com"];
 	for (let i = 0; i < array.length ;i++) {
 		if (domain === array[i]) {
 			return false;
