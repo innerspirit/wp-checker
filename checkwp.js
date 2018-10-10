@@ -14,7 +14,7 @@ function checkUrl(domain) {
 		let responded = function(res) {
 			if (res !== null && res.status === undefined) {
 				resolve(false);
-			};
+			}
 			resolve(!res.notFound);
 		};
 
@@ -30,7 +30,7 @@ function checkUrl(domain) {
 		);
 
 	});
-};
+}
 
 function validDomain(domain) {
 	let array = ["twitter.com", "github.com", "i.redd.it", "i.imgur.com", "imgur.com", "gfycat.com", "youtu.be", "gamasutra.com"];

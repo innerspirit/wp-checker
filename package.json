@@ -17,8 +17,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "promise": "^7.1.1",
-    "superagent": "^3.5.2",
+    "promise": "^7.3.1",
+    "superagent": "^3.8.3",
     "superagent-promise": "^1.1.0"
   },
   "bin": {
